@@ -18,7 +18,7 @@ export type UpdateActions<SourceType extends Record<string, any>> = UpdateAction
 
 export type InitializeAction = {
   type: 'initialize',
-  payload: Record<string, unknown>
+  payload: object
 }
 
 export const createUpdateAction = <FieldName extends string, PayloadType = unknown>(field: FieldName, payload: PayloadType): UpdateAction<FieldName, PayloadType> => {
@@ -28,11 +28,7 @@ export const createUpdateAction = <FieldName extends string, PayloadType = unkno
   }
 }
 
-type CreatedAction = ReturnType<typeof createUpdateAction>
-
-type UpdateOrInitializeAction = CreatedAction | InitializeAction
-
-export const genericReducer = <S extends Record<string, unknown>, A extends UpdateOrInitializeAction>(state: S, action: A) => {
+export const genericReducer = <S extends Record<string, unknown>>(state: S, action: UpdateActions<S> | InitializeAction) => {
   if (!action) {
     throw new Error('Without an action, we don\'t know how to update the state.')
   }
@@ -47,7 +43,7 @@ export const genericReducer = <S extends Record<string, unknown>, A extends Upda
     return {...state, [prop_name]: action.payload, isChanged: true}
   }
   if (action.type === 'initialize') {
-    return {...action.payload, isChanged: false}
+    return {...(action as InitializeAction).payload, isChanged: false}
   }
   return { ...state }
 }
