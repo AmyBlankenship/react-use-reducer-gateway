@@ -1,4 +1,4 @@
-import {UpdateAction, UpdateActionMap, UpdateActions} from '../utilities/utilities';
+import {KeysOfType, UpdateAction, UpdateActionMap, UpdateActions} from '../utilities/utilities';
 
 // this function gratefully swiped from redux toolkit type tests
 declare const expectType: <T>(t: T) => T;
@@ -105,4 +105,13 @@ type Address = {
     // @ts-expect-error
     payload: {foo: 'bar'}
   }
+}
+
+{
+  let validKey: KeysOfType<Address, string> = 'street_address'
+  validKey = 'street_address'
+  validKey = 'city'
+  validKey = 'state'
+  // @ts-expect-error
+  const invalidKey: KeysOfType<Address, string> = 'zip'
 }

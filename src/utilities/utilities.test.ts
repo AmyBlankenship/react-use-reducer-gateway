@@ -38,6 +38,7 @@ describe('utilities', ()=> {
     });
     it('should throw useful error when update action does not match a property of the state', () => {
       const action = {type: 'update_random_prop' as const, payload: 'oops'}
+      // @ts-expect-error
       expect(()=> genericReducer(initialState, action)).toThrow('Can\'t update property "random_prop" because this is not a valid property on the state.')
     });
     it('should overwrite entire state in response to an initialize action', () => {
