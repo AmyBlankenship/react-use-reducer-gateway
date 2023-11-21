@@ -1,7 +1,10 @@
 {
-  "name": "react-use-reducer-gateway",
+  "name": "@amyblankenship/react-use-reducer-gateway",
   "version": "0.0.1",
   "description": "\"Gateway drug\" for developers hesitant to use React's useReducer. Covers 80% of cases, getting you hooked so you can take on the other 20% when you're ready.",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/amyblankenship"
+  },
   "main": "dist/cjs/index.js",
   "scripts": {
     "test": "jest",
@@ -9,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AmyBlankenship/react-use-reducer-gateway.git"
+    "url": "git+https://github.com/amyblankenship/react-use-reducer-gateway.git"
   },
   "keywords": [
     "react",
