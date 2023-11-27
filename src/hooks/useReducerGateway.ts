@@ -73,12 +73,20 @@ const useReducerGateway = <T extends AnyObject>(input: T) => {
     }
   }, [input]);
 
+  const initialize = useCallback((newValue: T) => {
+    dispatch({
+      type: 'initialize',
+      payload: newValue
+    })
+  }, []);
+
   const value = interimValue as T;
 
   return {
     value, isChanged: !!isChanged,
     update,
-    getInputHandlerFor
+    getInputHandlerFor,
+    initialize
   };
 }
 

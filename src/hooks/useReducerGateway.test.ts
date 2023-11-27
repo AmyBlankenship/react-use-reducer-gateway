@@ -114,4 +114,19 @@ describe('useReducerGateway', () => {
     expect(result.current.value).toEqual(newState)
     expect(result.current.isChanged).toEqual(false)
   });
+  it('should be able to be initialized manually', () => {
+    const { result } = renderHook(() => {
+      const managedData = useReducerGateway(initialState);
+      return managedData;
+    });
+    const newState = {
+      street_address: '8765 North Ave.',
+      city: 'Batesville',
+      state: 'NH',
+      zip: 89012
+    }
+    act(() => result.current.initialize(newState))
+    expect(result.current.value).toEqual(newState)
+    expect(result.current.isChanged).toEqual(false)
+  });
 });

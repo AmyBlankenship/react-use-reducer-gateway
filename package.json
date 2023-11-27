@@ -1,6 +1,6 @@
 {
   "name": "@amy_blankenship/react-use-reducer-gateway",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "\"Gateway drug\" for developers hesitant to use React's useReducer. Covers 80% of cases, getting you hooked so you can take on the other 20% when you're ready.",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
@@ -38,8 +38,11 @@
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "jsdom": "^22.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "rollup": "^4.5.0",
     "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "ts-jest": "^29.1.1",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2"
