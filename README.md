@@ -61,7 +61,7 @@ not using HTMLInputElements.
 `createUpdateAction<T>(fieldName: keyof T, newVal: T[fieldName])` : creates an action with the following signature:
 ```
 {
-    type: \`update_${fieldName}\`,
+    type: `update_${fieldName}`,
     payload: T[fieldName]
 }
 ```

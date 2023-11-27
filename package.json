@@ -1,6 +1,6 @@
 {
   "name": "@amy_blankenship/react-use-reducer-gateway",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "\"Gateway drug\" for developers hesitant to use React's useReducer. Covers 80% of cases, getting you hooked so you can take on the other 20% when you're ready.",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
